@@ -15,6 +15,9 @@
     		keyring="${cfmlprojects.sign.keyring}">
 	        <version upstream="1.0.0"/>
    		</deb>
+		<deb-repo dir="${cfdistro.basedir}/artifacts/debs" label="cfmlprojects" description="cfmlprojects debian repository"
+			key="${cfmlprojects.sign.key.id}" passphrase="${cfmlprojects.sign.key.passphrase}"
+    		keyring="${cfmlprojects.sign.keyring}"/>
 	</target>	
 	
 </project>
