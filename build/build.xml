@@ -5,7 +5,7 @@
 
 	<target name="build">
 		<taskdef-dependency name="deb" classname="debrepo.ant.DebTask" artifactId="debrepo" groupId="org.cfmlprojects" version="1.0.0" />
-		<ant-set-log-level level="3"/>
+		<!-- <ant-set-log-level level="3"/> -->
 	   	<deb
 	        todir="${cfdistro.basedir}/artifacts/debs"
 	        package="cfmlprojects-keyring"
