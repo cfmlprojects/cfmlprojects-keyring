@@ -1,0 +1,20 @@
+<project name="distro.build" default="build" basedir="./" xmlns:antcontrib="antlib:net.sf.antcontrib">
+
+	<loadproperties srcfile="build.properties"/>
+	<import file="${cfdistro.build.file}"/>
+
+	<target name="build">
+		<taskdef-dependency name="deb" classname="debrepo.ant.DebTask" artifactId="debrepo" groupId="org.cfmlprojects" version="1.0.0" />
+		<ant-set-log-level level="3"/>
+	   	<deb
+	        todir="${cfdistro.basedir}/artifacts/debs"
+	        package="cfmlprojects-keyring"
+	   		control="${src.dir}/cfmlprojects-keyring/debian" verbose="true"
+	        signpackage="true"
+            key="${cfmlprojects.sign.key.id}" passphrase="${cfmlprojects.sign.key.passphrase}"
+    		keyring="${cfmlprojects.sign.keyring}">
+	        <version upstream="1.0.0"/>
+   		</deb>
+	</target>	
+	
+</project>
