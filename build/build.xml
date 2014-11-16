@@ -7,7 +7,7 @@
 		<taskdef-dependency name="deb" classname="debrepo.ant.DebTask" artifactId="debrepo" groupId="org.cfmlprojects" version="1.0.0" />
 		<!-- <ant-set-log-level level="3"/> -->
 	   	<deb
-	        todir="${cfdistro.basedir}/artifacts/debs"
+	        todir="${cfdistro.basedir}/artifacts/debs/noarch"
 	        package="cfmlprojects-keyring"
 	   		control="${src.dir}/cfmlprojects-keyring/debian" verbose="true"
 	        signpackage="true"
@@ -15,7 +15,7 @@
     		keyring="${cfmlprojects.sign.keyring}">
 	        <version upstream="1.0.0"/>
    		</deb>
-		<deb-repo dir="${cfdistro.basedir}/artifacts/debs" label="cfmlprojects" description="cfmlprojects debian repository"
+		<deb-repo dir="${cfdistro.basedir}/artifacts/debs/noarch" label="cfmlprojects" description="cfmlprojects debian repository"
 			key="${cfmlprojects.sign.key.id}" passphrase="${cfmlprojects.sign.key.passphrase}"
     		keyring="${cfmlprojects.sign.keyring}"/>
 	</target>	
