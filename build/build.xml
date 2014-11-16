@@ -14,6 +14,8 @@
             key="${cfmlprojects.sign.key.id}" passphrase="${cfmlprojects.sign.key.passphrase}"
     		keyring="${cfmlprojects.sign.keyring}">
 	        <version upstream="1.0.0"/>
+	   		<tarfileset dir="${src.dir}/cfmlprojects-keyring/keyrings" prefix="usr/share/keyrings" filemode="644"/>
+	   		<tarfileset file="${src.dir}/cfmlprojects-keyring/README" prefix="usr/share/doc/cfmlprojects-keyring" filemode="644"/>
    		</deb>
 		<deb-repo dir="${cfdistro.basedir}/artifacts/debs/noarch" label="cfmlprojects" description="cfmlprojects debian repository"
 			key="${cfmlprojects.sign.key.id}" passphrase="${cfmlprojects.sign.key.passphrase}"
